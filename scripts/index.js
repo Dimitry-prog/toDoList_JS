@@ -19,8 +19,6 @@ const popUpClose = document.querySelector('.pop-up__close');
 const clearButtonToDoList = document.querySelector('.button__clear');
 const cancelButton = document.querySelector('.button__cancel');
 
-let toDoArr = [];
-
 formTodo.addEventListener('submit', function(event) {
   event.preventDefault();
   if (formInput.value !== '') {
@@ -53,6 +51,7 @@ function createToDoTask(value) {
 }
 
 function saveToDoList() {
+  let toDoArr = [];
   const toDoTexts = document.querySelectorAll('.todo__text');
   for (let item of toDoTexts) {
     if (!toDoArr.includes(item.textContent)) {
@@ -76,13 +75,10 @@ renderToDoList();
 
 function deleteTodoItem() {
   const deleteToDoTask = document.querySelectorAll('.todo__delete');
-  const toDoList = JSON.parse(localStorage.getItem('toDoList'));
   for (let i = 0; i < deleteToDoTask.length; i++) {
     deleteToDoTask[i].addEventListener('click', function() {
       this.parentElement.remove();
       saveToDoList();
-      toDoList.splice(toDoList[i], 1);
-      console.log(toDoList);
       checkChildInTodoList();
       suggestAdvice();
     });
