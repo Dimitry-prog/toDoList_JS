@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./vendors/normalize.css">
+  <link rel="stylesheet" href="./scss/index.css">
+  <title>ToDo List</title>
+</head>
+
+<body class="page">
+  <h1 class="page__title">What to do next?</h1>
+  <main class="main page__main">
+    <section class="todo main__todo">
+      <form class="form todo__form">
+        <input type="text" class="input input--form form__input">
+        <button class="button button--submit form__button" type="submit">Add</button>
+      </form>
+      <div class="todo__done">
+        <h2 class="todo__done-text">You don't have any todos</h2>
+        <div class="todo__done-img"></div>
+      </div>
+      <ul class="todo__list"></ul>
+    </section>
+  </main>
+  <div class="pop-up page__pop-up">
+    <div class="pop-up__content">
+      <div class="pop-up__header">
+        <h3 class="pop-up__title">You completed all tasks</h3>
+        <button class="button button__close pop-up__close"></button>
+      </div>
+      <p class="pop-up__subtitle">Do you want clear ToDo list?</p>
+      <div class="pop-up__footer">
+        <button class="button button__clear">Clear</button>
+        <button class="button button__cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="todo__template">
+    <ul class="todo__list">
+      <li class="todo__item">
+          <label for="input--custom">
+                     <input type="checkbox" class="input input--checkbox todo__checkbox" id="input--custom">
+          <span class="input--custom"></span>
+          </label>
+          <p class="todo__text"></p>
+          <button class="button todo__delete"><i class='bx bx-trash button__delete'></i></button>
+        </li>
+    </ul>
+  </template>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.page {
+  box-sizing: border-box;
+  font-family: $ffGlobal;
+  margin: 0 20px;
+  max-width: $containerWidth;
+  background-color: $pageBackgroundColor;
+  @media screen and (min-width: $containerWidth) {
+    margin: 0 auto;
+  }
+}
